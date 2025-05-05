@@ -1,5 +1,6 @@
 import React from "react";
 import { getCurrentWeather } from "./api";
+import WeatherIcon from "./WeatherIcon";
 import.meta.env.BASE_URL;
 
 const CurrentWeather = () => {
@@ -68,14 +69,15 @@ const CurrentWeather = () => {
       {/* Temperature Block */}
       <div className="bg-white text-black p-4 border border-[#65676b] rounded-xl w-[250px]">
         <div className="mb-2">
-          <img
+          {/* <img
             src={`${
               import.meta.env.BASE_URL
             }dist/weather_icons/set04/small/${icon_num}.png`}
             alt={summary}
             className="w-12 object-contain"
             height="50px"
-          />
+          /> */}
+          <WeatherIcon iconNumber={icon_num} alt={summary} />
         </div>
         <div className="mb-2">
           <div className="text-4xl font-semibold">{temperature} °C</div>

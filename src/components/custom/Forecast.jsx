@@ -1,5 +1,6 @@
 import HourlyForecastWidget from "./HourlyForecastWidget";
 import DailyForecastWidget from "./DailyForecastWidget";
+import HorizontallyScrollable from "./HorizontallyScrollable";
 
 function Forecast({ title, type, data }) {
   return (
