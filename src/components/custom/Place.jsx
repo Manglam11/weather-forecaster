@@ -20,7 +20,6 @@ const Place = () => {
   return (
     <div className="flex justify-center items-center gap-1">
       <FaLocationDot />
-      <i className="bi bi-geo-alt-fill"></i>
       <b>Bhilai</b>, India
     </div>
   );

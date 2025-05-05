@@ -4,7 +4,7 @@ import.meta.env.BASE_URL;
 
 const CurrentWeather = () => {
   const data = getCurrentWeather();
-  //   console.log(data);
+
   const {
     cloud_cover,
     feels_like,
@@ -64,35 +64,40 @@ const CurrentWeather = () => {
   ];
 
   return (
-    <div className="currentWeather">
-      <div className="temprature">
-        <div className="weather-icon">
+    <div className=" p-5 flex flex-col md:flex-row">
+      {/* Temperature Block */}
+      <div className="bg-white text-black p-4 border border-[#65676b] rounded-xl w-[250px]">
+        <div className="mb-2">
           <img
             src={`${
               import.meta.env.BASE_URL
-            }dist/weather_icons/set04/big/${icon_num}.png`}
+            }dist/weather_icons/set04/small/${icon_num}.png`}
             alt={summary}
+            className="w-12 object-contain"
+            height="50px"
           />
         </div>
-        <div className="value">
-          <div className="real">{temperature} °C</div>
-          <div className="feels_like">feels_like {feels_like} °C</div>
+        <div className="mb-2">
+          <div className="text-4xl font-semibold">{temperature} °C</div>
+          <div className="text-base text-gray-600">
+            feels_like {feels_like} °C
+          </div>
         </div>
-        <div className="summary">{summary}</div>
+        <div className="mt-4 text-xl font-medium">{summary}</div>
       </div>
-      <div className="other-infos">
+
+      {/* Other Infos */}
+      <div className="flex-1 p-4 border border-[#65676b] rounded-xl md:ml-4 mt-4 md:mt-0 flex flex-wrap justify-center items-center">
         {otherInfoWidgets.map(({ id, name, icon, value, unit }) => (
-          <div className="widget" key={id}>
-            <div className="widget-container">
-              <div className="info">
-                <div className="icon">
-                  <i className={`bi bi-${icon}`}></i>
-                </div>
-                <div className="value">
+          <div key={id} className="w-[182px] m-2">
+            <div className="flex flex-col items-center p-2">
+              <div className="flex items-center text-lg mb-2">
+                <i className={`bi bi-${icon} mr-2`}></i>
+                <span>
                   {value} {unit}
-                </div>
+                </span>
               </div>
-              <div className="name">{name}</div>
+              <div className="text-sm text-gray-600">{name}</div>
             </div>
           </div>
         ))}
