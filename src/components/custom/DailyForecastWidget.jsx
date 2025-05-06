@@ -31,7 +31,7 @@ const DailyForecastWidget = ({ data }) => {
     weather_date.day === today_date.day ? "Today" : weather_date.day;
 
   return (
-    <div className="relative cursor-pointer flex flex-col items-center p-3 mr-3 min-w-[115px] border border-gray-400 rounded-xl">
+    <div className="mt-5 relative cursor-pointer flex flex-col items-center p-3 mr-3 min-w-[115px] border border-gray-400 rounded-xl">
       {weather_date.day && (
         <div className="absolute -top-6 text-sm text-gray-500">
           {displayDay}

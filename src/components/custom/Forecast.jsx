@@ -7,7 +7,7 @@ function Forecast({ title, type, data }) {
     <div className="mt-8 select-none">
       <div className="">
         <h3 className="text-xl font-semibold">{title}</h3>
-        <div className="flex items-center overflow-x-auto mt-2 pt-6">
+        <HorizontallyScrollable className="flex items-center overflow-x-auto mt-2 pt-6">
           {data.map((singleData, index) => (
             <div key={index}>
               {type === "hourly" ? (
@@ -17,7 +17,7 @@ function Forecast({ title, type, data }) {
               )}
             </div>
           ))}
-        </div>
+        </HorizontallyScrollable>
       </div>
     </div>
   );
