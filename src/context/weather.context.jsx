@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { DEFAULT_PLACE } from "../utils";
+import { DEFAULT_PLACE, MEASUREMENT_SYSTEM } from "../constants";
 import { getWeatherData } from "../components/custom/api";
 const WeatherContext = createContext();
 
@@ -9,6 +9,9 @@ function WeatherProvider({ children }) {
   const [currentWeather, setCurrentWeather] = useState({});
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [dailyForecast, setDailyForecast] = useState([]);
+  const [measurementSystem, setMeasurementSystem] = useState(
+    MEASUREMENT_SYSTEM.IN
+  );
 
   useEffect(() => {
     async function _getWeatherData() {
@@ -29,7 +32,15 @@ function WeatherProvider({ children }) {
 
   return (
     <WeatherContext.Provider
-      value={{ place, loading, currentWeather, hourlyForecast, dailyForecast }}
+      value={{
+        place,
+        loading,
+        currentWeather,
+        hourlyForecast,
+        dailyForecast,
+        measurementSystem,
+        setMeasurementSystem,
+      }}
     >
       {children}
     </WeatherContext.Provider>

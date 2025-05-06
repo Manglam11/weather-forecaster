@@ -18,3 +18,9 @@ export const DEFAULT_PLACE = {
   //   timezone: "Asia/Kolkata",
   //   type: "settlement",
 };
+
+export const MEASUREMENT_SYSTEM = {
+  AUTO: "auto",
+  METRIC: "metric",
+  IN: "in",
+};
