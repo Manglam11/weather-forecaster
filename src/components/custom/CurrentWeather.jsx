@@ -1,11 +1,8 @@
 import React from "react";
-import { getCurrentWeather } from "./api";
 import WeatherIcon from "./WeatherIcon";
 import.meta.env.BASE_URL;
 
-const CurrentWeather = () => {
-  const data = getCurrentWeather();
-
+const CurrentWeather = ({ data }) => {
   const {
     cloud_cover,
     feels_like,

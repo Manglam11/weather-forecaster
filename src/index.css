@@ -49,6 +49,17 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+@keyframes slide-left {
+  100% {
+    left: 105%;
+  }
+}
+
+@keyframes slide-far {
+  100% {
+    left: 200%;
+  }
+}
 
 :root {
   --radius: 0.625rem;
